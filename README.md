@@ -16,13 +16,13 @@ daemon
 
 ---
 
-## Задача 2. 5 наибольших номеров из /etc/protocols
+## Задача 2.
 
 ```bash
 grep -v '^#' /etc/protocols | awk 'NF { print $2, $1 }' | sort -rn | head -n 5
 ```
 
-Вывод (в таблице ядра/версии `protocols` значения могут отличаться):
+Вывод:
 ```
 262 mptcp
 143 ethernet
@@ -33,7 +33,7 @@ grep -v '^#' /etc/protocols | awk 'NF { print $2, $1 }' | sort -rn | head -n 5
 
 ---
 
-## Задача 3. Программа banner
+## Задача 3.
 
 ```bash
 #!/bin/bash
@@ -60,7 +60,7 @@ $ ./banner "Hello from RTU MIREA!"
 
 ---
 
-## Задача 4. Идентификаторы в файле (без повторений)
+## Задача 4.
 
 Идентификатор по правилам C/C++/Java: `[A-Za-z_][A-Za-z0-9_]*`.
 
@@ -114,7 +114,7 @@ $ ls -l /usr/local/bin/banner
 
 ---
 
-## Задача 6. Комментарий в первой строке файлов .c, .js, .py
+## Задача 6.
 
 ```bash
 #!/bin/bash
@@ -146,7 +146,7 @@ $ ./check_comment.sh demo
 
 ---
 
-## Задача 7. Поиск дубликатов по содержимому
+## Задача 7.
 
 ```bash
 #!/bin/bash
@@ -155,7 +155,7 @@ dir="${1:-.}"
 find "$dir" -type f -exec md5sum {} + | sort | uniq -w32 --all-repeated=separate
 ```
 
-Вывод (группы дубликатов разделены пустой строкой):
+Вывод:
 ```
 $ ./dups.sh demo
 401b30e3b8b5d629635a5c613cdb7919  demo/d.txt
@@ -167,7 +167,7 @@ $ ./dups.sh demo
 
 ---
 
-## Задача 8. Архивация файлов по расширению в tar
+## Задача 8.
 
 ```bash
 #!/bin/bash
@@ -194,7 +194,7 @@ demo/sub/b.log
 
 ---
 
-## Задача 9. Замена 4 пробелов на табуляцию
+## Задача 9.
 
 ```bash
 #!/bin/bash
@@ -206,7 +206,7 @@ fi
 sed 's/    /\t/g' "$1" > "$2"
 ```
 
-Вход (`in.txt`): строки с отступами в 4 и 8 пробелов. Результат (`cat -A out.txt`, `^I` = табуляция):
+Вход :
 ```
 start$
 ^Iindented$
@@ -215,7 +215,7 @@ start$
 
 ---
 
-## Задача 10. Пустые текстовые файлы в каталоге
+## Задача 10.
 
 ```bash
 #!/bin/bash
@@ -227,7 +227,7 @@ fi
 find "$1" -type f -name '*.txt' -empty -printf '%f\n' | sort
 ```
 
-Вывод (в каталоге: `empty1.txt`, `empty2.txt` — пустые, `full.txt` — с текстом, `empty.log` — пустой, но не `.txt`):
+Вывод:
 ```
 $ ./empty.sh demo
 empty1.txt
