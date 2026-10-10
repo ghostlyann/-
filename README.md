@@ -1,20 +1,3 @@
-# Лабораторная: простые действия с файлами и каталогами в Linux
-
-Все скрипты написаны на bash, проверены на GNU/Linux (bash, GNU sed, coreutils).
-Перед отправкой рекомендуется проверить: `shellcheck taskNN/*`.
-
-```
-.
-├── task01/task1.sh          ├── task06/check_comment.sh
-├── task02/task2.sh          ├── task07/dups.sh
-├── task03/banner            ├── task08/archive.sh
-├── task04/idents.sh         ├── task09/spaces2tab.sh
-└── task05/reg               └── task10/empty.sh
-```
-
-Сделать скрипты исполняемыми: `chmod +x task*/*`
-
----
 
 ## Задача 1. Отсортированный список пользователей из passwd
 
